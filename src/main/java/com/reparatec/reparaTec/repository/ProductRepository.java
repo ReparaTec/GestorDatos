@@ -10,4 +10,5 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
     Optional<Product> findByCodigoDeBarras(String codigoDeBarras);
 
     List<Product> findByTipoProducto(TipoProducto tipoProducto);
+
 }

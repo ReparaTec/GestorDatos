@@ -10,4 +10,5 @@ public interface ventaRepository extends JpaRepository<Venta, Long> {
     List<Venta> findByUsuario(Usuario usuario);
     List<Venta> findByCliente(Client cliente);
     List<Venta> findByPagada(boolean pagada);
+
 }

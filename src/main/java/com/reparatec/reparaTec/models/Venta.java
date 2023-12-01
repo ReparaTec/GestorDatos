@@ -19,6 +19,8 @@ public class Venta {
 
     @ManyToOne
     private Client cliente;
+    @ManyToOne
+    private Estado estado;
 
     @ManyToMany
     @JoinTable(

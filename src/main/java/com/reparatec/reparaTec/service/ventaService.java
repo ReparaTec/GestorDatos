@@ -20,5 +20,12 @@ public class ventaService {
     public List<Venta> obtenerVentasPagadas() {
         return ventaRepositorys.findByPagada(true);
     }
+    public void crearVenta(Venta venta) {
+        ventaRepositorys.save(venta);
+    }
+
+    public Venta obtenerVentaPorId(Long id) {
+        return ventaRepositorys.findById(id).orElse(null);
+    }
 
 }

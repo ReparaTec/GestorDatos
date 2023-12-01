@@ -20,7 +20,13 @@ public class ProductoService {
         return productoRepository.findByCodigoDeBarras(codigoDeBarras);
     }
 
+    public Product obtenerProductoPorId(Long id) {
+        return productoRepository.findById(id).orElse(null);
+    }
     public List<Product> buscarPorTipo(TipoProducto tipoProducto) {
         return productoRepository.findByTipoProducto(tipoProducto);
+    }
+    public void crearProducto(Product producto) {
+        productoRepository.save(producto);
     }
 }
