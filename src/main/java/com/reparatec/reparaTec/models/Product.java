@@ -16,7 +16,7 @@ public class Product {
 
     private String nombre;
     private double precio;
-    private String codigo;
+    private String codigoDeBarras;
     @ManyToOne
     private Estado estado;
     @ManyToOne

@@ -29,4 +29,7 @@ public class ProductoService {
     public void crearProducto(Product producto) {
         productoRepository.save(producto);
     }
+    public List<Product> obtenerTodosLosProductos() {
+        return productoRepository.findAll();
+    }
 }
