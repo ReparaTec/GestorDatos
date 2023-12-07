@@ -1,4 +1,5 @@
 package com.reparatec.reparaTec.repository;
+import com.reparatec.reparaTec.models.Estado;
 import com.reparatec.reparaTec.models.Product;
 import com.reparatec.reparaTec.models.TipoProducto;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +11,7 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
     Optional<Product> findByCodigoDeBarras(String codigoDeBarras);
 
     List<Product> findByTipoProducto(TipoProducto tipoProducto);
+    Optional<Product> findById(Long id);
+    List<Product> findByEstado(Estado estado);
 
 }

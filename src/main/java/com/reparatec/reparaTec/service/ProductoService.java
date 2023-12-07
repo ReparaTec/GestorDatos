@@ -1,35 +1,21 @@
 package com.reparatec.reparaTec.service;
 
+import com.reparatec.reparaTec.models.Estado;
 import com.reparatec.reparaTec.models.Product;
 import com.reparatec.reparaTec.models.TipoProducto;
-import com.reparatec.reparaTec.repository.ProductRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class ProductoService {
-    private final ProductRepository productoRepository;
+public interface ProductoService {
+    List<Product> obtenerTodosLosProductos();
 
-    public ProductoService(ProductRepository productoRepository) {
-        this.productoRepository = productoRepository;
-    }
+    Optional<Product> buscarPorCodigoDeBarras(String codigoDeBarras);
 
-    public Optional<Product> buscarPorCodigoDeBarras(String codigoDeBarras) {
-        return productoRepository.findByCodigoDeBarras(codigoDeBarras);
-    }
+    Product obtenerProductoPorId(Long id);
 
-    public Product obtenerProductoPorId(Long id) {
-        return productoRepository.findById(id).orElse(null);
-    }
-    public List<Product> buscarPorTipo(TipoProducto tipoProducto) {
-        return productoRepository.findByTipoProducto(tipoProducto);
-    }
-    public void crearProducto(Product producto) {
-        productoRepository.save(producto);
-    }
-    public List<Product> obtenerTodosLosProductos() {
-        return productoRepository.findAll();
-    }
+    List<Product> buscarPorTipo(TipoProducto tipoProducto);
+
+    void crearProducto(Product producto);
+    List<Product> findByEstado(Estado estado);
 }

@@ -20,7 +20,8 @@ public class Estado {
     // Constructores, getters y setters
 
     public Estado() {
-        // Constructor por defecto
+        this.setActivo(true);
+        this.setActivo(false);
     }
 
     public Estado(boolean activo) {
