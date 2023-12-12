@@ -46,4 +46,25 @@ public class ProductServiceImpl implements ProductoService{
     public List<Product> findByEstado(Estado estado) {
         return productoRepository.findByEstado(estado);
     }
+
+    @Override
+    public void actualizarProducto(Product producto) {
+        productoRepository.save(producto);
+    }
+
+    @Override
+    public void eliminarProducto(Long id) {
+        productoRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Product> obtenerProductosPorEstadoActivo() {
+        return productoRepository.findByEstadoActivoTrue();
+    }
+
+    @Override
+    public List<Product> obtenerProductosPorEstadoInactivo() {
+        return productoRepository.findByEstadoActivoFalse();
+    }
+
 }

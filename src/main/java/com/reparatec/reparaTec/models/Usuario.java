@@ -17,6 +17,8 @@ public class Usuario extends Pearson {
     private String usuario;
     private String pass;
     @ManyToOne
+    private TipoUsuario tipoUsuario;
+    @ManyToOne
     private Estado estado;
     @OneToMany(mappedBy = "usuario")
     private List<Venta> ventas;

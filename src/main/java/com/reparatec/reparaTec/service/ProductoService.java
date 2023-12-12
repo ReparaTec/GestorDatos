@@ -18,4 +18,8 @@ public interface ProductoService {
 
     void crearProducto(Product producto);
     List<Product> findByEstado(Estado estado);
+    void actualizarProducto(Product producto);
+    void eliminarProducto(Long id);
+    List<Product> obtenerProductosPorEstadoActivo();
+    List<Product> obtenerProductosPorEstadoInactivo();
 }

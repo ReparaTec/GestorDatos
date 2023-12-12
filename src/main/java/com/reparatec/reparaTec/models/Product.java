@@ -17,10 +17,9 @@ public class Product {
     private String nombre;
     private double precio;
     private String codigoDeBarras;
+    private int stock;
     @ManyToOne
     private Estado estado;
     @ManyToOne
     private TipoProducto tipoProducto;
-    @ManyToMany(mappedBy = "productos")
-    private List<Venta> ventas;
 }

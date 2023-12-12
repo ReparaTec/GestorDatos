@@ -22,13 +22,6 @@ public class Venta {
     @ManyToOne
     private Estado estado;
 
-    @ManyToMany
-    @JoinTable(
-            name = "venta_producto",
-            joinColumns = @JoinColumn(name = "venta_id"),
-            inverseJoinColumns = @JoinColumn(name = "producto_id"))
-    private List<Product> productos;
-
     private double valorTotal;
     private boolean pagada;
 }
